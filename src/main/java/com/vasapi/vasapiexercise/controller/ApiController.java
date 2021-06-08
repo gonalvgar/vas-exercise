@@ -48,7 +48,7 @@ public class ApiController {
                 maw.addObject("response", "Unable to save communications, json data seems to be unreadable");
             }
         } catch (Exception e) {
-            System.out.println("Unable to save communications" + e.getMessage());
+            System.out.println("Unable to save communications:" + e.getMessage());
             maw.addObject("response", "Unable to save communications.");
         }
         return maw;
