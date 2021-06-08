@@ -26,7 +26,7 @@ public class MetricsController {
         this.communicationService = communicationService;
     }
 
-    @GetMapping("")
+    @GetMapping()
     public String mainMethod() {
         Integer missing = missingFields();
         Integer empty = emptyFields();

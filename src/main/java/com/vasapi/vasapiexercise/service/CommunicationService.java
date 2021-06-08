@@ -34,6 +34,7 @@ public class CommunicationService {
     public void saveAll(List<Communication> communicationList, long timeProcess) {
         //We're counting here how many files we've processed to insert into the ddbb for the kpis service
         count.incrementAndGet();
+        //And collecting in time how much time the system took to process this file
         times.add(timeProcess);
         //We delete all data before inserting to ensure that we're only processing 1 jsp file
         communicationRepository.deleteAll();

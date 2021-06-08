@@ -27,7 +27,7 @@ public class ApiController {
     NetDao netDao;
     private static String uri = "https://raw.githubusercontent.com/vas-test/test1/master/logs/MCP_";
 
-    @GetMapping("/{date}")
+    @GetMapping("/date/{date}")
     public ModelAndView InsertCommunications(@PathVariable("date") String date) throws Exception {
         ModelAndView maw = new ModelAndView("files");
         //this is to measure the parse json to object time
@@ -48,8 +48,8 @@ public class ApiController {
                 maw.addObject("response", "Unable to save communications, json data seems to be unreadable");
             }
         } catch (Exception e) {
-            System.out.println("Unable to save communications, your URL seems to be incorrect: " + e.getMessage());
-            maw.addObject("response", "Unable to save communications, your URL seems to be incorrect");
+            System.out.println("Unable to save communications" + e.getMessage());
+            maw.addObject("response", "Unable to save communications.");
         }
         return maw;
     }

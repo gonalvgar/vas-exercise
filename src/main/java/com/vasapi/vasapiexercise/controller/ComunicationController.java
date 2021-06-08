@@ -10,7 +10,7 @@ public class ComunicationController {
     @GetMapping("/")
     public ModelAndView main() {
         ModelAndView maw = new ModelAndView("index");
-        String welcome = "Welcome to the VAS api, please, complete the url adding /YYYMMDD to process a file";
+        String welcome = "Welcome to the VAS api, please, complete the url adding /date/YYYMMDD to process a file";
         maw.addObject("welcome", welcome);
         return maw;
     }

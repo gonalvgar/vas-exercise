@@ -20,7 +20,7 @@ public class KpisController {
         this.communicationService = communicationService;
     }
 
-    @GetMapping("")
+    @GetMapping()
     public String mainMethod() {
         Integer rows = numberOfRows();
         Integer calls = numberOfCalls();
@@ -72,8 +72,6 @@ public class KpisController {
 
     public Integer numberOfCcsDestination() {
         Integer res = communicationService.getAllCcDestinationNotRepeated().elementSet().size();
-        System.out.println(res);
-        System.out.println(communicationService.getAllCcDestinationNotRepeated());
         return res;
     }
 
